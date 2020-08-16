@@ -598,4 +598,12 @@ formats = {
   "Irssi::Script::nickcolor" = {
     pubmsg_hilight = "{pubmsghinick $0 $3 $[-9]1}$2";
   };
+  "Irssi::Script::adv_windowlist" = {
+    awl_display_key = "%K%0$H $N %N $S";
+    awl_display_nokey = "%K%0$H $N %N $S";
+    awl_display_key_active = "%1 %W$C %N";
+    awl_display_nokey_active = "%1 %W$C %N";
+    awl_separator = "%N %N";
+    awl_display_header = "";
+  };
 };

@@ -1,148 +1,210 @@
 servers = (
-  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
+  {
+    address = "ssl.efnet.org";
+    chatnet = "EFNet";
+    port = "9999";
+    use_tls = "yes";
   },
-  { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
+  {
+    address = "irc.esper.net";
+    chatnet = "EsperNet";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "no";
+  },
   {
     address = "irc.gamesurge.net";
     chatnet = "GameSurge";
     port = "6667";
   },
-  { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
-  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
-  { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; }
+  {
+    address = "eu.irc6.net";
+    chatnet = "IRCnet";
+    port = "6667";
+    use_tls = "yes";
+  },
+  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
+  {
+    address = "irc.ircsource.net";
+    chatnet = "IRCSource";
+    port = "6667";
+  },
+  { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
+  {
+    address = "irc.oftc.net";
+    chatnet = "OFTC";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  { 
+    address = "irc.quakenet.org";
+    chatnet = "QuakeNet";
+    port = "6667";
+  },
+  {
+    address = "irc.rizon.net";
+    chatnet = "Rizon";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
+  { 
+    address = "irc.undernet.org";
+    chatnet = "Undernet";
+    port = "6667";
+  }
 );
 
 chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
   DALnet = {
     type = "IRC";
     max_kicks = "4";
-    max_msgs = "3";
+    max_msgs = "20";
     max_whois = "30";
   };
-  QuakeNet = {
+  EFNet = { 
     type = "IRC";
     max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
+    max_msgs = "4";
+    max_whois = "1";
   };
-  OFTC = { 
+  EsperNet = {
     type = "IRC";
     max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
+    max_msgs = "4";
+    max_whois = "1";
   };
+#  Freenode = {
+#    type = "IRC";
+#    max_kicks = "1";
+#    max_msgs = "4";
+#    max_whois = "1";
+#    sasl_mechanism = "PLAIN";
+#    sasl_username = "nope";
+#    sasl_password = "sorry";
+#  };
   GameSurge = {
     type = "IRC";
     max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
+    max_msgs = "1";
+    max_whois = "1";
   };
-  WebChat = {
+  IRCnet = { 
     type = "IRC";
     max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  IRCSource = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  NetFuze = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
+  QuakeNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
   };
   Rizon = { 
     type = "IRC";
     max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  LinkNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
+    max_msgs = "1";
+    max_whois = "1";
   };
   SILC = { type = "SILC"; };
+  Undernet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; }
+  { name = "#irssi"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
+  { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
+  { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
+  { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
+  { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
+  { name = "silc"; chatnet = "SILC"; autojoin = "No"; }
 );
 
 aliases = {
-  J = "join";
-  WJOIN = "join -window";
-  WQUERY = "query -window";
-  LEAVE = "part";
-  BYE = "quit";
-  EXIT = "quit";
-  SIGNOFF = "quit";
-  DESCRIBE = "action";
-  DATE = "time";
-  HOST = "userhost";
-  LAST = "lastlog";
-  SAY = "msg *";
-  WI = "whois";
-  WII = "whois $0 $0";
-  WW = "whowas";
-  W = "who";
-  N = "names";
-  M = "msg";
-  T = "topic";
-  C = "clear";
-  CL = "clear";
-  K = "kick";
-  KB = "kickban";
-  KN = "knockout";
-  BANS = "ban";
-  B = "ban";
-  MUB = "unban *";
-  UB = "unban";
-  IG = "ignore";
-  UNIG = "unignore";
-  SB = "scrollback";
-  UMODE = "mode $N";
-  WC = "window close";
-  WN = "window new hide";
-  SV = "say Irssi $J ($V) - http://irssi.org/";
-  GOTO = "sb goto";
-  CHAT = "dcc chat";
-  RUN = "SCRIPT LOAD";
-  CALC = "exec - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
-  SBAR = "STATUSBAR";
-  INVITELIST = "mode $C +I";
-  Q = "QUERY";
-  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
-  EXEMPTLIST = "mode $C +e";
   ATAG = "WINDOW SERVER";
-  UNSET = "set -clear";
-  RESET = "set -default";
+  ADDALLCHANS = "SCRIPT EXEC foreach my \\$channel (Irssi::channels()) { Irssi::command(\"CHANNEL ADD -auto \\$channel->{name} \\$channel->{server}->{tag} \\$channel->{key}\")\\;}";
+  B = "BAN";
+  BACK = "AWAY";
+  BANS = "BAN";
+  BYE = "QUIT";
+  C = "CLEAR";
+  CALC = "EXEC - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  CHAT = "DCC CHAT";
+  DATE = "TIME";
+  DEHIGHLIGHT = "DEHILIGHT";
+  DESCRIBE = "ACTION";
+  DHL = "DEHILIGHT";
+  EXEMPTLIST = "MODE $C +e";
+  EXIT = "QUIT";
+  GOTO = "SCROLLBACK GOTO";
+  HIGHLIGHT = "HILIGHT";
+  HL = "HILIGHT";
+  HOST = "USERHOST";
+  INVITELIST = "MODE $C +I";
+  J = "JOIN";
+  K = "KICK";
+  KB = "KICKBAN";
+  KN = "KNOCKOUT";
+  LAST = "LASTLOG";
+  LEAVE = "PART";
+  M = "MSG";
+  MUB = "UNBAN *";
+  N = "NAMES";
+  NMSG = "^MSG";
+  P = "PART";
+  Q = "QUERY";
+  RESET = "SET -default";
+  RUN = "SCRIPT LOAD";
+  SAY = "MSG *";
+  SB = "SCROLLBACK";
+  SBAR = "STATUSBAR";
+  SIGNOFF = "QUIT";
+  SV = "MSG * Irssi $J ($V) - https://irssi.org";
+  T = "TOPIC";
+  UB = "UNBAN";
+  UMODE = "MODE $N";
+  UNSET = "SET -clear";
+  W = "WHO";
+  WC = "WINDOW CLOSE";
+  WG = "WINDOW GOTO";
+  WJOIN = "JOIN -window";
+  WI = "WHOIS";
+  WII = "WHOIS $0 $0";
+  WL = "WINDOW LIST";
+  WN = "WINDOW NEW HIDDEN";
+  WQUERY = "QUERY -window";
+  WW = "WHOWAS";
+  usercount = "/sbar awl_0 add -before awl_0 -alignment left usercount";
 };
 
 statusbar = {
@@ -293,7 +355,6 @@ statusbar = {
     awl_0 = {
       items = {
         barstart = { priority = "100"; };
-        usercount = { };
         awl_0 = { };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -301,26 +362,44 @@ statusbar = {
   };
 };
 settings = {
-  core = { real_name = "yourname"; user_name = "yourname"; nick = "yourname"; };
-  "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "weed"; };
+  core = {
+    real_name = "yourname";
+    user_name = "yourusername";
+    nick = "yournick";
+    timestamp_format = "%H:%M";
+  };
+  "fe-text" = { actlist_sort = "refnum"; scroll_page_count = ".33"; };
+  "fe-common/core" = {
+    theme = "weed";
+    autolog = "yes";
+    autolog_colors = "yes";
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT PUBLIC";
+  };
   "perl/core/scripts" = {
-    awl_all_disable = "no";
-    awl_automode = "sbar";
+    awl_all_disable = "OFF";
+    #   awl_automode = "sbar";
     awl_block = "20";
-    awl_columns = "1";
-    awl_display_key = "%K%0$H $N %N";
-    awl_display_key_active = "%1 %W$C %N";
-    awl_display_nokey = "%K%0$H $N %N";
-    awl_display_nokey_active = "%1 %W$C %N";
+    #   awl_columns = "1";
+    #   awl_display_key = "%K%0$H $N %N";
+    #   awl_display_key_active = "%1 %W$C %N";
+    #   awl_display_nokey = "%K%0$H $N %N";
+    #   awl_display_nokey_active = "%1 %W$C %N";
     awl_height_adjust = "1";
     awl_hide_data = "0";
     awl_maxlines = "9";
+    awl_maxcolumns = "1";
     awl_placement = "bottom";
     awl_position = "0";
     awl_prefer_name = "yes";
-    awl_sbar_maxlength = "yes";
-    awl_separator = "%N %N";
+    awl_sbar_maxlength = "ON";
+    #   awl_separator = "%N %N";
     awl_sort = "refnum";
+    awl_shared_sbar = "OFF";
+    awl_viewer = "OFF";
+    awl_hide_empty = "0";
+    neat_colors = "rRX5EX3CygcCBX3HbX4NMX3AX32X42m";
   };
+};
+logs = {
+  linux = { level = "ALL"; items = ( { type = "window"; name = "1"; } ); };
 };
